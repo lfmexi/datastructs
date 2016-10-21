@@ -22,11 +22,33 @@ func main() {
 	fmt.Println(list.Get(2))
 	fmt.Println(list.Get(3))
 
-	list.Delete(2)
+	list.Delete(0)
 	fmt.Println(list.Size)
 
 	fmt.Println(list.Get(0))
 	fmt.Println(list.Get(1))
 	fmt.Println(list.Get(2))
+
+	fmt.Println(list.Size)
+	fmt.Println(list.Pop())
+	fmt.Println(list.Pop())
+	fmt.Println(list.Pop())
+	fmt.Println(list.Pop())
+	fmt.Println(list.Pop())
+	fmt.Println(list.Pop())
+
+	list.Add("Hi")
+	list.Add("There")
+
+	list.Add("There2")
+	list.Add("There3")
+
+	fmt.Println(list.Size)
+	fmt.Println(list.Pop())
+	fmt.Println(list.Pop())
+	fmt.Println(list.Pop())
+	fmt.Println(list.Pop())
+	fmt.Println(list.Pop())
+	fmt.Println(list.Pop())
 
 }

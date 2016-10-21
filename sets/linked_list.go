@@ -42,17 +42,15 @@ func (l *LinkedList) Delete(i int) (interface{}, error) {
 	node := l.getNode(i)
 
 	if node != nil {
-		p, n := node.UnlinkNode()
-
-		if p != nil {
-			p.SetNext(n)
+		p, n := l.removeNode(node)
+		if node == l.first {
+			l.first = n
 		}
 
-		if n != nil {
-			n.SetPrev(p)
+		if node == l.last {
+			l.last = p
 		}
 
-		l.Size--
 		return node.GetValue(), nil
 	}
 
@@ -88,4 +86,37 @@ func (l LinkedList) getNode(i int) *nodes.DoubleLinkNode {
 	}
 
 	return current
+}
+
+// Pop returns the last inserted element, removing it from the list
+func (l *LinkedList) Pop() interface{} {
+	if l.last == nil {
+		return nil
+	}
+
+	p, _ := l.removeNode(l.last)
+	v := l.last.GetValue()
+
+	if l.last == l.first {
+		l.first = p
+	}
+
+	l.last = p
+
+	return v
+}
+
+func (l *LinkedList) removeNode(node *nodes.DoubleLinkNode) (*nodes.DoubleLinkNode, *nodes.DoubleLinkNode) {
+	p, n := node.UnlinkNode()
+
+	if p != nil {
+		p.SetNext(n)
+	}
+
+	if n != nil {
+		n.SetPrev(p)
+	}
+
+	l.Size--
+	return p, n
 }
