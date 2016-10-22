@@ -15,17 +15,17 @@ func NewBinaryNode(index interface{}, value interface{}) *BinaryNode {
 }
 
 // GetIndex gets the value that is stored on the node
-func (b BinaryNode) GetIndex() interface{} {
+func (b *BinaryNode) GetIndex() interface{} {
 	return b.index
 }
 
 // GetNext gets the next child node
-func (b BinaryNode) GetNext() *BinaryNode {
+func (b *BinaryNode) GetNext() *BinaryNode {
 	return b.next
 }
 
 // GetValue gets the value that is stored on the node
-func (b BinaryNode) GetValue() interface{} {
+func (b *BinaryNode) GetValue() interface{} {
 	return b.value
 }
 

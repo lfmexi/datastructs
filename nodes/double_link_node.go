@@ -14,17 +14,17 @@ func NewDoubleLinkNode(value interface{}) *DoubleLinkNode {
 }
 
 // GetNext gets the next child node
-func (b DoubleLinkNode) GetNext() *DoubleLinkNode {
+func (b *DoubleLinkNode) GetNext() *DoubleLinkNode {
 	return b.next
 }
 
 // GetPrev gets the previous child node
-func (b DoubleLinkNode) GetPrev() *DoubleLinkNode {
+func (b *DoubleLinkNode) GetPrev() *DoubleLinkNode {
 	return b.prev
 }
 
 // GetValue gets the value that is stored on the node
-func (b DoubleLinkNode) GetValue() interface{} {
+func (b *DoubleLinkNode) GetValue() interface{} {
 	return b.value
 }
 

@@ -58,7 +58,7 @@ func (l *LinkedList) Delete(i int) (interface{}, error) {
 }
 
 // Get returns the element that lives on the position i of the list
-func (l LinkedList) Get(i int) (interface{}, error) {
+func (l *LinkedList) Get(i int) (interface{}, error) {
 	if i >= l.Size || i < 0 {
 		return nil, fmt.Errorf("Index %v out of bounds", i)
 	}
@@ -76,7 +76,7 @@ func (l LinkedList) Get(i int) (interface{}, error) {
 	return nil, nil
 }
 
-func (l LinkedList) getNode(i int) *nodes.DoubleLinkNode {
+func (l *LinkedList) getNode(i int) *nodes.DoubleLinkNode {
 	current := l.first
 	for j := 0; current != nil && j <= i; j++ {
 		if j == i {
