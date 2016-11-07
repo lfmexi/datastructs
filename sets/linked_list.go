@@ -14,8 +14,8 @@ type LinkedList struct {
 }
 
 // NewLinkedList returns a new instance of LinkedList
-func NewLinkedList() LinkedList {
-	return LinkedList{}
+func NewLinkedList() *LinkedList {
+	return &LinkedList{}
 }
 
 // Add creates a new element on the LinkedList
